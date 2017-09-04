@@ -1,3 +1,4 @@
+import java.io.IOException;
 
 public class Board {
 	
@@ -78,23 +79,22 @@ public class Board {
 	}
 	//all checking methods will be implemented to determine win on 3 ticks
 	private boolean checkDiagonal(int row, int col) {
-		if(col<=board.length-3&&row<=board[0].length-3) {
+		if(col<=board[0].length-3&&row<=board.length-3) {
 			if(board[row][col]==board[row+1][col+1] && board[row][col]==board[row+2][col+2]) {
 				System.out.println("There is a win there");
 				return true;
 			}
 		}
-		if(col<=board.length-3&&row>=2) {
+		if(col<=board[0].length-3&&row>=2) {
 			if(board[row][col]==board[row-1][col+1] && board[row][col]==board[row-2][col+2]) {
 				System.out.println("There is a win there");
 				return true;
 			}
 		}
 		return false;
-	
 	}
 	private boolean checkVertical(int row, int col) {
- 		if(row<=board[0].length-3) {
+ 		if(row<=board.length-3) {
 			if(board[row][col]==board[row+1][col] && board[row][col]==board[row+2][col]) {
 				System.out.println("There is a win there");
 				return true;
@@ -103,7 +103,7 @@ public class Board {
  		return false;
 	}
 	private boolean checkHorizontal(int row, int col) {
-		if(col<=board.length-3) {
+		if(col<=board[0].length-3) {
 			if(board[row][col]==board[row][col+1] && board[row][col]==board[row][col+2]) {
 				System.out.println("There is a win there");
 				return true;
