@@ -2,23 +2,22 @@
 public class Board {
 	
 	char[][] board;
-	private boolean firstLoad;
 	private int numberOfSquare; //used to show the number of the cell on launch
 	
 	public Board(int rows, int cols) {
 		board = new char[rows][cols];
-		firstLoad=true;
 		numberOfSquare=0;
 	}
 	//prints the board in a table with all of its content
 	void showBoard() {
 		for(int row=0;row<board.length;row++) {
 			for(int col=0;col<board[0].length;col++) {
-				if(firstLoad) {
-					System.out.print(" "+numberOfSquare++ +" "+"|");
+				if(board[row][col]==0) {
+					System.out.print(" "+numberOfSquare+" "+"|");
 				}else {
 					System.out.print(" "+board[row][col]+" "+"|");
 				}
+				numberOfSquare++;
 			}
 			System.out.println();
 			if(row!=board.length-1) {
@@ -27,7 +26,7 @@ public class Board {
 			}
 			System.out.println();
 		}
-		firstLoad=false;
+		numberOfSquare=0;
 	}
 	
 	char[][] getBoard(){
