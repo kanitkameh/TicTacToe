@@ -8,5 +8,3 @@ The game also has adjustable symbols for ticking so you wont have to always use 
 ATTENTION! It requires the external java library "JANSI" in order to work. You can download the library from this link:
 http://fusesource.github.io/jansi/
 
-doing a git homework bro kur4enceto umre
-kura mi e bok
